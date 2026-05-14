@@ -1,166 +1,120 @@
+// Welcome Message
 
-let texts = [
+window.onload = function(){
 
-    "Frontend Developer",
-    "Creative Designer",
-    "JavaScript Developer",
-    "TypeScript Learner"
+  startTyping();
+};
 
+// Alert
+
+function showMessage(){
+
+  alert(
+    "Thank you for visiting my portfolio!"
+  );
+}
+
+// Typing Animation
+
+const text = [
+
+  "Frontend Developer",
+
+  "Creative Designer",
+
+  "JavaScript Programmer"
 ];
+
+let count = 0;
 
 let index = 0;
 
-function changeText(){
+let currentText = "";
 
-    document.getElementById(
-    "dynamicText")
+let letter = "";
 
-    .innerHTML = texts[index];
+function startTyping(){
 
-    index++;
+  if(count === text.length){
 
-    if(index >= texts.length){
+    count = 0;
+  }
 
-        index = 0;
+  currentText = text[count];
 
-    }
+  letter =
+  currentText.slice(0, ++index);
 
+  document.getElementById("typing")
+  .textContent = letter;
+
+  if(letter.length === currentText.length){
+
+    count++;
+
+    index = 0;
+  }
+
+  setTimeout(startTyping,150);
 }
 
-setInterval(changeText,2000);
+// Change Theme
 
+function changeTheme(){
 
-function showWelcome(){
+  const colors = [
+
+    "#0f172a",
+    "#1e293b",
+    "#4c1d95",
+    "#0c4a6e"
+  ];
+
+  let randomColor =
+
+  colors[Math.floor(Math.random()*colors.length)];
+
+  document.body.style.background =
+  randomColor;
+}
+
+// Form Validation
+
+function validateForm(){
+
+  let name =
+  document.getElementById("name").value;
+
+  let email =
+  document.getElementById("email").value;
+
+  let phone =
+  document.getElementById("phone").value;
+
+  if(name === ""){
+
+    alert("Enter your name");
+
+    return false;
+  }
+
+  if(email === ""){
+
+    alert("Enter your email");
+
+    return false;
+  }
+
+  if(phone.length !== 10){
 
     alert(
-    "Welcome to My Creative Portfolio"
+      "Phone number must contain 10 digits"
     );
 
+    return false;
+  }
+
+  alert("Form Submitted Successfully!");
+
+  return true;
 }
-
-
-
-function projectAlert(){
-
-    alert(
-    "Project Opened Successfully"
-    );
-
-}
-
-
-
-document.getElementById("contactForm")
-.addEventListener("submit",
-
-function(event){
-
-    event.preventDefault();
-
-    let name =
-    document.getElementById("name").value;
-
-    let email =
-    document.getElementById("email").value;
-
-    let phone =
-    document.getElementById("phone").value;
-
-    let valid = true;
-
-    
-
-    document.getElementById(
-    "nameError").innerHTML = "";
-
-    document.getElementById(
-    "emailError").innerHTML = "";
-
-    document.getElementById(
-    "phoneError").innerHTML = "";
-
-    
-
-    if(name.length < 3){
-
-        document.getElementById(
-        "nameError").innerHTML =
-
-        "Enter valid name";
-
-        valid = false;
-
-    }
-
-  
-
-    let emailPattern =
-    /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-
-    if(!email.match(emailPattern)){
-
-        document.getElementById(
-        "emailError").innerHTML =
-
-        "Enter valid email";
-
-        valid = false;
-
-    }
-
-  
-
-    let phonePattern =
-    /^[0-9]{10}$/;
-
-    if(!phone.match(phonePattern)){
-
-        document.getElementById(
-        "phoneError").innerHTML =
-
-        "Enter valid phone number";
-
-        valid = false;
-
-    }
-
-  
-
-    if(valid){
-
-        alert(
-        "Form Submitted Successfully ✅"
-        );
-
-        document.getElementById(
-        "contactForm").reset();
-
-    }
-
-});
-
-
-
-let skills = [
-
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "TypeScript"
-
-];
-
-console.log(skills);
-
-
-let student = {
-
-    name:"Madhu Mitha",
-
-    course:"MCA",
-
-    college:"KSR College of Technology"
-
-};
-
-console.log(student);
