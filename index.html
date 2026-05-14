@@ -1,0 +1,153 @@
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Creative Bento Portfolio</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+
+  <body>
+
+    <header>
+      <h2 class="logo">
+        <i class="fa-solid fa-sparkles"></i>
+
+        Madhumitha V
+      </h2>
+
+      <button onclick="showWelcome()">Say Hi 👋</button>
+    </header>
+
+
+    <section class="dashboard-grid">
+    
+
+      <div class="card profile-card">
+        <img
+          src="https://cdn-icons-png.flaticon.com/512/6997/6997662.png"
+          alt="Profile Image"
+        />
+
+        <h1>Madhumitha V</h1>
+
+        <h3 id="dynamicText"></h3>
+
+        <p>
+          Passionate MCA student and aspiring software developer dedicated to
+          creating innovative, responsive and user-friendly web applications
+          using modern technologies.
+        </p>
+      </div>
+
+    
+
+      <div class="card about-card">
+        <h2>About Me</h2><br>
+
+        <p>
+          I enjoy creating innovative,
+        responsive and user-friendly
+        web applications using
+        HTML, CSS, JavaScript and
+        TypeScript. I am always eager
+        to learn new technologies and
+        improve my programming skills.
+        </p>
+      </div>
+
+    
+
+      <div class="card skills-card">
+        <h2>Skills</h2>
+
+        <div class="skills">
+          <span>HTML5</span>
+
+          <span>CSS3</span>
+
+          <span>JavaScript</span>
+
+          <span>TypeScript</span>
+
+          <span>Java</span>
+
+          <span>Python</span>
+        </div>
+      </div>
+
+    
+
+      <div class="card project-card">
+        <h2>Projects</h2>
+
+        <div class="project">
+          <h3>Portfolio Website</h3>
+
+          <button onclick="projectAlert()">View</button>
+        </div>
+
+        <div class="project">
+          <h3>Crop Recommendation</h3>
+
+          <button onclick="projectAlert()">View</button>
+        </div>
+      </div>
+
+      <div class="card stats-card">
+        <div class="stat-box">
+          <h1>6+</h1>
+
+          <p>Projects</p>
+        </div>
+
+        <div class="stat-box">
+          <h1>10+</h1>
+
+          <p>Certificates</p>
+        </div>
+      </div>
+
+
+      <div class="card contact-card">
+        <h2>Contact Me</h2>
+
+        <form id="contactForm">
+          <input type="text" id="name" placeholder="Enter Name" />
+
+          <small id="nameError"></small>
+
+          <input type="text" id="email" placeholder="Enter Email" />
+
+          <small id="emailError"></small>
+
+          <input type="text" id="phone" placeholder="Enter Phone Number" />
+
+          <small id="phoneError"></small>
+
+          <textarea rows="4" placeholder="Enter Message"></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+ 
+
+    <script src="script.js"></script>
+
+    
+
+    <script src="script.ts"></script>
+  </body>
+</html>
